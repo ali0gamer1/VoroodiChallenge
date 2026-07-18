@@ -8,7 +8,7 @@ router.get('/', (req, res) => {
   const q = req.query.q;
 
   if (q) {
-    const pattern = new RegExp(q);
+    const pattern = new RegExp(RegExp.escape(q));
     const filtered = db.books.filter(
       b => pattern.test(b.title) || pattern.test(b.author)
     );

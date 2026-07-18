@@ -62,7 +62,7 @@ fix: Either use the defined "const book" object or change "var" to "let"
 - fix: add loadBooks() at line 35
 
 
-## باگ 7 Page refreshing after book update
+## باگ 7 — Page refreshing after book update
 
 کجا: [Third question\bug-hunt\public\index.html] خط 24
 
@@ -70,7 +70,18 @@ fix: Either use the defined "const book" object or change "var" to "let"
 
 ریشه: به علت رفتار طبیعی تگ form این اتفاق میوفته.
 
-fix: add this to the form attribute list
+- fix: add this to the form attribute list
 ```html
  onsubmit="return false"
 ```
+
+
+
+## باگ 8 — Unwanted exception when special regex characters are searched
+
+کجا: [Third question\bug-hunt\routes\books.js] خط 11
+مشکل: اکسپشن بعد از سرچ کردن کرکتر های مخصوص رجکس
+
+ریشه: مشکل درونی رجکس
+
+- fix: escape the search term
