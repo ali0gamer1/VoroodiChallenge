@@ -28,7 +28,7 @@ function render(books) {
     `;
 
     card.querySelector('.edit').addEventListener('click', () => {
-      openModal(books[i]);
+      openModal(book);
     });
     card.querySelector('.delete').addEventListener('click', async () => {
       await deleteBook(book.id);

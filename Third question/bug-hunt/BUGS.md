@@ -37,3 +37,13 @@
 ریشه: به علت function scope بودن  کلیدواژه var و دسترسی داشتن callback ها به i که به ایندکس خارج از آرایه اشاره میکند.
 
 fix: Either use the defined "const book" object or change "var" to "let"
+
+
+## باگ 5 — Book cannot be edited
+
+کجا: [Third question\bug-hunt\public\js\render.js] خط 31
+مشکل: کتاب بعد از فشردن دکمه ادیت, ادیت نمیشد
+ریشه: به علت مشابه در باگ 4
+
+fix: Either use the defined "const book" object or change "var" to "let"
+
