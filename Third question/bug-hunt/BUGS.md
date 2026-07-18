@@ -28,3 +28,12 @@
 ریشه: به علت هارد کد شده بودن مقدار ذخیره شده در دیتابیس اثری نداشت.
 
 - fix: Replace "false" with "req.body.read"
+
+## باگ 4 — Book cannot be deleted
+
+کجا: [Third question\bug-hunt\public\js\render.js] خط 34
+مشکل: کتاب بعد از فشردن دکمه حذف, حذف نمیشد
+
+ریشه: به علت function scope بودن  کلیدواژه var و دسترسی داشتن callback ها به i که به ایندکس خارج از آرایه اشاره میکند.
+
+fix: Either use the defined "const book" object or change "var" to "let"

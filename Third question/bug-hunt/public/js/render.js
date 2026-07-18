@@ -10,7 +10,7 @@ function render(books) {
   }
   emptyMessage.classList.add('empty-hidden');
 
-  for (var i = 0; i < books.length; i++) {
+  for (let i = 0; i < books.length; i++) {
     const book = books[i];
 
     const card = document.createElement('div');
@@ -31,7 +31,7 @@ function render(books) {
       openModal(books[i]);
     });
     card.querySelector('.delete').addEventListener('click', async () => {
-      await deleteBook(books[i].id);
+      await deleteBook(book.id);
     });
 
     booksContainer.appendChild(card);
