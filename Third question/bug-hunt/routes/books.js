@@ -19,14 +19,14 @@ router.get('/', (req, res) => {
 });
 
 router.post('/', (req, res) => {
-  const { title, author } = req.body;
+  const { title, author, read } = req.body;
   const db = readDB();
 
   const book = {
     id: db.nextId,
     title,
     author,
-    read: false
+    read: read
   };
 
   db.books.push(book);

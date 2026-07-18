@@ -18,3 +18,13 @@
 ریشه: مقدار برگشتی getBooks یک promise هست چون getBooks یک فانکشن async است.
 
 - fix: Add "await" before the call. 
+
+## باگ 3 — Read checkbox had no effect
+
+کجا: [Third question\bug-hunt\routes\books.js] خط [29 و 22]
+
+مشکل: مقدار چک باکس "خوانده شده" اثری نمیگذاشت
+
+ریشه: به علت هارد کد شده بودن مقدار ذخیره شده در دیتابیس اثری نداشت.
+
+- fix: Replace "false" with "req.body.read"
