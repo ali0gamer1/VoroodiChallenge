@@ -59,4 +59,18 @@ fix: Either use the defined "const book" object or change "var" to "let"
 
 ریشه: چون هیچ عملی راجع به اپدیت کردن محتوا بعد از دلیت انجام نمیشه
 
-- fix: add loadBooks()
+- fix: add loadBooks() at line 35
+
+
+## باگ 7 Page refreshing after book update
+
+کجا: [Third question\bug-hunt\public\index.html] خط 24
+
+مشکل: صفحه بعد از ثبت, رفرش میشد.
+
+ریشه: به علت رفتار طبیعی تگ form این اتفاق میوفته.
+
+fix: add this to the form attribute list
+```html
+ onsubmit="return false"
+```
