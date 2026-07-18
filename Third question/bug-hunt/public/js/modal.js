@@ -11,9 +11,13 @@ function openModal(book) {
   form.author.value = book ? book.author : '';
   form.read.checked = book ? book.read : false;
   modal.classList.remove('modal-hidden');
+  modal.classList.add('modal-visible');
+  
 }
 
 function closeModal() {
+
+  modal.classList.remove('modal-visible');  
   modal.classList.add('modal-hidden');
   editingId = null;
 }
