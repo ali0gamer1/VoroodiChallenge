@@ -32,6 +32,7 @@
 ## باگ 4 — Book cannot be deleted
 
 کجا: [Third question\bug-hunt\public\js\render.js] خط 34
+
 مشکل: کتاب بعد از فشردن دکمه حذف, حذف نمیشد
 
 ریشه: به علت function scope بودن  کلیدواژه var و دسترسی داشتن callback ها به i که به ایندکس خارج از آرایه اشاره میکند.
@@ -42,8 +43,20 @@ fix: Either use the defined "const book" object or change "var" to "let"
 ## باگ 5 — Book cannot be edited
 
 کجا: [Third question\bug-hunt\public\js\render.js] خط 31
+
 مشکل: کتاب بعد از فشردن دکمه ادیت, ادیت نمیشد
+
 ریشه: به علت مشابه در باگ 4
 
 fix: Either use the defined "const book" object or change "var" to "let"
 
+
+## باگ 6 — Book list not updating after deletion
+
+کجا: [Third question\bug-hunt\public\js\render.js] خط 34
+
+مشکل: لیست کتاب ها بعد از فشردن دکمه دلیت اپدیت نمیشد
+
+ریشه: چون هیچ عملی راجع به اپدیت کردن محتوا بعد از دلیت انجام نمیشه
+
+- fix: add loadBooks()
