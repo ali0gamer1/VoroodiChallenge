@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>کتابخانه‌ی من</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>کتابخانه‌ی من</h1>
+    <input id="search" type="text" placeholder="جستجو در کتاب‌ها...">
+    <button id="add-btn">افزودن کتاب</button>
+  </header>
+
+  <main>
+    <div id="books"></div>
+    <p id="empty" class="empty-hidden">هنوز کتابی اضافه نکردید.</p>
+  </main>
+
+  <div id="modal" class="modal-hidden">
+    <div class="modal-content">
+      <h2 id="modal-title">افزودن کتاب</h2>
+      <form id="book-form">
+        <label>
+          عنوان
+          <input name="title" type="text" required>
+        </label>
+        <label>
+          نویسنده
+          <input name="author" type="text" required>
+        </label>
+        <label class="checkbox-label">
+          <input name="read" type="checkbox">
+          خوانده شده
+        </label>
+        <div class="form-actions">
+          <button type="submit">ذخیره</button>
+          <button type="button" id="cancel-btn">انصراف</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="js/api.js"></script>
+  <script src="js/modal.js"></script>
+  <script src="js/render.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
