@@ -7,6 +7,6 @@
 - fix: Add a .modal-visible class containing "display: flex" and delete "display: flex" in \#modal then adjust the code in JS (public/js/modal.js)
 -  Also added the cancel functionality
 
-# باگ 2 — Ketabs not showing
+## باگ 2 — Ketabs not showing
 
 - کجا
