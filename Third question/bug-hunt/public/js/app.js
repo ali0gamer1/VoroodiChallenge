@@ -3,7 +3,7 @@ const addBtn = document.getElementById('add-btn');
 const cancelBtn = document.getElementById('cancel-btn');
 
 async function loadBooks(query) {
-  const books = getBooks(query);
+  const books = await getBooks(query);
   render(books);
 }
 

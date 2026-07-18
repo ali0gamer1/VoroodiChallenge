@@ -11,4 +11,10 @@
 
 ## باگ 2 — Ketabs not showing
 
-- کجا
+کجا: [Third question\bug-hunt\public\js\app.js] خط [6]
+
+مشکل: ظاهر نشدن لیست کتاب ها
+
+ریشه: مقدار برگشتی getBooks یک promise هست چون getBooks یک فانکشن async است.
+
+- fix: Add "await" before the call. 
