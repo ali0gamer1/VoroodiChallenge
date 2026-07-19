@@ -1,17 +1,17 @@
 {
   "books": [
     {
-      "id": 39,
-      "title": "2",
-      "author": "22k",
-      "read": false
+      "id": 43,
+      "title": "2540.0",
+      "author": "452245",
+      "read": true
     },
     {
-      "id": 43,
-      "title": "254",
-      "author": "452245",
-      "read": false
+      "id": 44,
+      "title": "0",
+      "author": "0",
+      "read": true
     }
   ],
-  "nextId": 44
+  "nextId": 45
 }
