@@ -1,41 +1,17 @@
 {
   "books": [
     {
-      "id": 27,
-      "title": "das",
-      "author": "das",
+      "id": 39,
+      "title": "222",
+      "author": "22",
       "read": false
     },
     {
-      "id": 28,
-      "title": "1",
-      "author": "1",
-      "read": true
-    },
-    {
-      "id": 30,
-      "title": "414144",
-      "author": "11",
-      "read": false
-    },
-    {
-      "id": 31,
-      "title": "0100",
-      "author": "011",
-      "read": false
-    },
-    {
-      "id": 32,
-      "title": "1414",
-      "author": "11111111111111",
-      "read": false
-    },
-    {
-      "id": 34,
-      "title": "((",
-      "author": "1",
+      "id": 40,
+      "title": "dsa",
+      "author": "da",
       "read": false
     }
   ],
-  "nextId": 35
+  "nextId": 41
 }

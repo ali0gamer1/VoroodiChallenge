@@ -7,6 +7,15 @@ async function loadBooks(query) {
   render(books);
 }
 
+function showMessageSnack(msg) {
+  var x = document.getElementById("snackbar");
+  x.className = "show";
+  x.innerText = msg
+  setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+}
+
+
+
 form.addEventListener('submit', async (event) => {
   const payload = {
     title: form.title.value,
@@ -15,9 +24,21 @@ form.addEventListener('submit', async (event) => {
   };
 
   if (editingId) {
-    await updateBook(editingId, payload);
+    let result = await updateBook(editingId, payload);
+
+    if (result.status != 200)
+    {
+        showMessageSnack(`Status code: ${result.status}\n Message: ${(await result.json()).msg}`)
+    }
+
   } else {
-    await createBook(payload);
+    
+    let result = await createBook(payload);
+
+    if (result.status != 200)
+    {
+        showMessageSnack(`Status code: ${result.status}\n Message: ${(await result.json()).msg}`)
+    }
   }
 
   closeModal();
