@@ -91,3 +91,11 @@ fix: Either use the defined "const book" object or change "var" to "let"
 نداشتن سیستم نمایش خطا و پروسه کردن آن
 
 - fix: added. see notes in git history.
+
+
+## باگ 10 — Minor fixes
+
+فیکس مشکلاتی همچون: لود شدن لیست کتاب ها حتی بعد از درخواست نامعتبر و جابجایی ایمپورت middleware در server.js و فرستادن بی مورد کتاب ادیت شده به سمت کاربر.
+
+به git history مراجعه کنید.
+

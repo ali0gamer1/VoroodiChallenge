@@ -29,6 +29,7 @@ form.addEventListener('submit', async (event) => {
     if (result.status != 200)
     {
         showMessageSnack(`Status code: ${result.status}\n Message: ${(await result.json()).msg}`)
+        return;
     }
 
   } else {
@@ -38,6 +39,7 @@ form.addEventListener('submit', async (event) => {
     if (result.status != 200)
     {
         showMessageSnack(`Status code: ${result.status}\n Message: ${(await result.json()).msg}`)
+        return;
     }
   }
 

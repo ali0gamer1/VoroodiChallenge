@@ -63,7 +63,7 @@ router.post('/', (req, res) => {
   db.nextId++;
   writeDB(db);
 
-  res.json(book);
+  res.status(200).json({ msg: 'ok' });
 });
 
 router.put('/:id', (req, res) => {
@@ -83,13 +83,13 @@ router.put('/:id', (req, res) => {
   if (!validated) {
     return res.status(400).json({ msg: 'invalid book data' });
   }
-
+ 
   book.title = validated.title;
   book.author = validated.author;
   book.read = validated.read;
 
   writeDB(db);
-  res.json(book);
+  res.status(200).json({ msg: 'ok' });
 });
 
 router.delete('/:id', (req, res) => {
