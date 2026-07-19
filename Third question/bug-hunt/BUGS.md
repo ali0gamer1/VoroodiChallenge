@@ -85,3 +85,9 @@ fix: Either use the defined "const book" object or change "var" to "let"
 ریشه: مشکل درونی رجکس
 
 - fix: escape the search term
+
+## باگ 9 — no error handling when input was invalid
+
+نداشتن سیستم نمایش خطا و پروسه کردن آن
+
+- fix: added. see notes in git history.
