@@ -3,6 +3,34 @@ const { readDB, writeDB } = require('../db');
 
 const router = express.Router();
 
+function normalizeReadValue(value) { //AI added this. i dont think it's necessary.
+  if (value === true || value === 'true' || value === 'on' || value === '1' || value === 1) {
+    return true;
+  }
+
+  if (value === false || value === 'false' || value === 'off' || value === '0' || value === 0) {
+    return false;
+  }
+
+  return null;
+}
+
+function validateBookInput(body) {
+  const title = typeof body.title === 'string' ? body.title.trim() : '';
+  const author = typeof body.author === 'string' ? body.author.trim() : '';
+  const read = normalizeReadValue(body.read);
+
+  if (!title || !author || read === null) {
+    return null;
+  }
+
+  return { title, author, read };
+}
+
+
+
+
+
 router.get('/', (req, res) => {
   const db = readDB();
   const q = req.query.q;
@@ -19,14 +47,16 @@ router.get('/', (req, res) => {
 });
 
 router.post('/', (req, res) => {
-  const { title, author, read } = req.body;
   const db = readDB();
+  const validated = validateBookInput(req.body);
+
+  if (!validated) {
+    return res.status(400).json({ msg: 'invalid book data' });
+  }
 
   const book = {
     id: db.nextId,
-    title,
-    author,
-    read: read
+    ...validated
   };
 
   db.books.push(book);
@@ -48,9 +78,15 @@ router.put('/:id', (req, res) => {
     return; // idk 
   }
 
-  book.title = req.body.title;
-  book.author = req.body.author;
-  book.read = req.body.read;
+  const validated = validateBookInput(req.body);
+
+  if (!validated) {
+    return res.status(400).json({ msg: 'invalid book data' });
+  }
+
+  book.title = validated.title;
+  book.author = validated.author;
+  book.read = validated.read;
 
   writeDB(db);
   res.json(book);

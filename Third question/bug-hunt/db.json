@@ -2,15 +2,9 @@
   "books": [
     {
       "id": 39,
-      "title": "222",
-      "author": "22",
-      "read": false
-    },
-    {
-      "id": 40,
-      "title": "dsa",
-      "author": "da",
-      "read": false
+      "title": "222k",
+      "author": "22k",
+      "read": true
     }
   ],
   "nextId": 41
