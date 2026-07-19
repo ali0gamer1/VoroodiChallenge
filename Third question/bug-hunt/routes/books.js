@@ -41,6 +41,13 @@ router.put('/:id', (req, res) => {
   const db = readDB();
 
   const book = db.books.find(b => b.id === id);
+
+  if (book == undefined)
+  {
+    res.status(404).json({"msg":"bro i dont have that"});
+    return; // idk 
+  }
+
   book.title = req.body.title;
   book.author = req.body.author;
   book.read = req.body.read;
@@ -50,13 +57,24 @@ router.put('/:id', (req, res) => {
 });
 
 router.delete('/:id', (req, res) => {
-  const id = parseInt(req.params.id);
-  const db = readDB();
+    const id = parseInt(req.params.id);
+    const db = readDB();
+    
+    
+    let bookIndex = db.books.findIndex((val)=>val.id == id)
 
-  db.books = db.books.filter(b => b.id !== id);
-  writeDB(db);
+    if (bookIndex == -1)
+    {
+        res.status(404).json({ "msg": "da fuq?"});
+        return;
+    }
 
-  res.json({ ok: true });
+    db.books.splice(bookIndex,1);
+    
+    writeDB(db);
+
+    res.status(200).json({ msg: "ok" });
+
 });
 
 module.exports = router;
