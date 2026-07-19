@@ -9,7 +9,7 @@ function readDB() {
 }
 
 function writeDB(data) {
-  fs.writeFile(DB_PATH, JSON.stringify(data, null, 2), () => {});
+  fs.writeFileSync(DB_PATH, JSON.stringify(data, null, 2), 'utf-8');
 }
 
 module.exports = { readDB, writeDB };

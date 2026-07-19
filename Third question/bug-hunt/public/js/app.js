@@ -15,7 +15,6 @@ function showMessageSnack(msg) {
 }
 
 
-
 form.addEventListener('submit', async (event) => {
   const payload = {
     title: form.title.value,

@@ -28,6 +28,9 @@ function validateBookInput(body) {
 }
 
 
+function escapeRegex(str) {
+  return str.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&');
+}
 
 
 
@@ -36,7 +39,7 @@ router.get('/', (req, res) => {
   const q = req.query.q;
 
   if (q) {
-    const pattern = new RegExp(RegExp.escape(q));
+    const pattern = new RegExp(escapeRegex(q)); 
     const filtered = db.books.filter(
       b => pattern.test(b.title) || pattern.test(b.author)
     );

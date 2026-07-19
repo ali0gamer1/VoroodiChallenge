@@ -99,3 +99,9 @@ fix: Either use the defined "const book" object or change "var" to "let"
 
 به git history مراجعه کنید.
 
+
+## باگ 11 — Minor fixes
+
+اضافه کردن فانکشن escapeRegex در [Third question\bug-hunt\routes\books.js] در خط 31 به علت implement نشده بودن Regexp.escape در بعضی از موراد(نمیدونم کجا/باید ببینم)
+
+تغییر writeFile به writeFileSync به علت async بودن writeFile و sync بودن readFile(ناهماهنگی)
