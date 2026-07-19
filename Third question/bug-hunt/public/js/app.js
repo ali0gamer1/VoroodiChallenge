@@ -16,6 +16,8 @@ function showMessageSnack(msg) {
 
 
 form.addEventListener('submit', async (event) => {
+    event.preventDefault();
+
   const payload = {
     title: form.title.value,
     author: form.author.value,
@@ -46,8 +48,18 @@ form.addEventListener('submit', async (event) => {
   loadBooks(searchInput.value);
 });
 
+let searchTask = null;
 searchInput.addEventListener('input', (event) => {
-  loadBooks(event.target.value);
+
+    if (searchTask) {
+        clearTimeout(searchTask);
+    }
+
+    searchTask = setTimeout(() => {
+        loadBooks(searchInput.value);
+    }, 300);
+
+
 });
 
 addBtn.addEventListener('click', () => openModal(null));

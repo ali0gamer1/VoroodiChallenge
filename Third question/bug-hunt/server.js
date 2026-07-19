@@ -7,9 +7,10 @@ const logger = require('./middleware/logger');
 const app = express();
 const PORT = 3000;
 
+app.use(logger);
 app.use(express.json());
 app.use(express.static(path.join(__dirname, 'public')));
-app.use(logger);
+
 app.use('/api/books', booksRouter);
 
 

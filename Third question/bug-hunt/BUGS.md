@@ -105,3 +105,11 @@ fix: Either use the defined "const book" object or change "var" to "let"
 اضافه کردن فانکشن escapeRegex در [Third question\bug-hunt\routes\books.js] در خط 31 به علت implement نشده بودن Regexp.escape در بعضی از موراد(نمیدونم کجا/باید ببینم)
 
 تغییر writeFile به writeFileSync به علت async بودن writeFile و sync بودن readFile(ناهماهنگی)
+
+
+## باگ 12 — every keystroke made a request
+
+موقع سرچ کردن با هر تغییر ورودی یک درخواست به سرور میرفت که فشار زیادی به سرور میاورد.
+با اضافه کردن یک متغییر به عنوان flag برای فعالیت "در حال ادیت بودن", و حذف تایمر قبلی هنگام هر keystroke و اضافه کردن تایمر جدید بعد از آن, این مشکل رو حل کردم.
+
+کجا: app.js خط 51
